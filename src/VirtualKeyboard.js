@@ -40,7 +40,7 @@ class VirtualKeyboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: props.value;
+      text: props.value
     };
   }
 
