@@ -93,11 +93,20 @@ class VirtualKeyboard extends Component {
 			} else {
 				curText += val;
 			}
+			if (!curText || curText === null || curText === '' || curText === '0') {
+				curText = '0.0';
+			}
+			if (!checkAmount(curText)) return;
 			this.setState({ text: curText });
 			this.props.onPress(curText);
 		} else /* if (props.pressMode == 'char')*/ {
 			this.props.onPress(val);
 		}
+	}
+
+	export function checkAmount(input) {
+		let reg_amount = /^(([1-9]\d*)|\d)(\.\d{1,2})?$/;
+		return reg_amount.test(input);
 	}
 }
 
