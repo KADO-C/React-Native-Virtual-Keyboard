@@ -23,7 +23,8 @@ class VirtualKeyboard extends Component {
     decimal: PropTypes.bool,
     rowStyle: ViewPropTypes.style,
     cellStyle: ViewPropTypes.style,
-    inputMode: PropTypes.oneOf(["cashier", "normal"])
+    inputMode: PropTypes.oneOf(["cashier", "normal"]),
+    value: PropTypes.string
   };
 
   static defaultProps = {
@@ -32,14 +33,23 @@ class VirtualKeyboard extends Component {
     backspaceImg: require("./backspace.png"),
     applyBackspaceTint: true,
     decimal: false,
-    inputMode: "normal"
+    inputMode: "normal",
+    value: ""
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      text: ""
+      text: this.props.value;
     };
+  }
+
+  componentWillReceiveProps(nextProps): void {
+    if (nextProps.messageCount >= 0) {
+      this.setState({
+        text: this.props.value
+      });
+    }
   }
 
   render() {
