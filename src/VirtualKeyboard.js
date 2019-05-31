@@ -93,8 +93,8 @@ class VirtualKeyboard extends Component {
 			} else {
 				curText += val;
 			}
-			if (!curText || curText === null || curText === '' || curText === '0') {
-				curText = '0.0';
+			if (!curText || curText === null || curText === '') {
+				curText = '';
 			}
 			if (!this.checkAmount(curText)) return;
 			this.setState({ text: curText });
