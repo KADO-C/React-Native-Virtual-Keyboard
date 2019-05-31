@@ -45,11 +45,9 @@ class VirtualKeyboard extends Component {
   }
 
   componentWillReceiveProps(nextProps): void {
-    if (nextProps.value) {
-      this.setState({
-        text: nextProps.value
-      });
-    }
+    this.setState({
+      text: nextProps.value
+    });
   }
 
   render() {
