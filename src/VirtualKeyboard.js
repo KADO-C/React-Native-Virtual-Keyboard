@@ -104,7 +104,7 @@ class VirtualKeyboard extends Component {
 		}
 	}
 
-	export function checkAmount(input) {
+	function checkAmount(input) {
 		let reg_amount = /^(([1-9]\d*)|\d)(\.\d{1,2})?$/;
 		return reg_amount.test(input);
 	}
