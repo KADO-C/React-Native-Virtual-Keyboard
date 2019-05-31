@@ -39,12 +39,16 @@ class VirtualKeyboard extends Component {
 
   constructor(props) {
     super(props);
+    console.log("constructor");
+    console.log(props);
     this.state = {
       text: props.value
     };
   }
 
   componentWillReceiveProps(nextProps): void {
+    console.log("componentWillReceiveProps");
+    console.log(nextProps);
     if (nextProps.messageCount >= 0) {
       this.setState({
         text: nextProps.value
@@ -120,6 +124,8 @@ class VirtualKeyboard extends Component {
   }
 
   onPress(val) {
+	console.log("onPress");
+    console.log(this.state);
     if (this.props.pressMode === "string") {
       let curText = this.state.text;
       if (isNaN(val)) {
