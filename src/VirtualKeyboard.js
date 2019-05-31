@@ -96,7 +96,7 @@ class VirtualKeyboard extends Component {
 			if (!curText || curText === null || curText === '' || curText === '0') {
 				curText = '0.0';
 			}
-			if (!checkAmount(curText)) return;
+			if (!this.checkAmount(curText)) return;
 			this.setState({ text: curText });
 			this.props.onPress(curText);
 		} else /* if (props.pressMode == 'char')*/ {
@@ -104,7 +104,7 @@ class VirtualKeyboard extends Component {
 		}
 	}
 
-	function checkAmount(input) {
+	checkAmount(input) {
 		let reg_amount = /^(([1-9]\d*)|\d)(\.\d{1,2})?$/;
 		return reg_amount.test(input);
 	}
