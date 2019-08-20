@@ -87,9 +87,10 @@ class VirtualKeyboard extends Component {
         <Image
           source={this.props.backspaceImg}
           resizeMode="contain"
-          style={
+          style={[
+            { backgroundColor: "green" },
             this.props.applyBackspaceTint && { tintColor: this.props.color }
-          }
+          ]}
         />
       </TouchableOpacity>
     );
