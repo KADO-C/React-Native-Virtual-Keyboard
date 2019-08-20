@@ -1,5 +1,3 @@
-"use strict";
-
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
@@ -88,7 +86,7 @@ class VirtualKeyboard extends Component {
           source={this.props.backspaceImg}
           resizeMode="contain"
           style={[
-            { backgroundColor: "green" },
+            { width: 30, height: 30 },
             this.props.applyBackspaceTint && { tintColor: this.props.color }
           ]}
         />
@@ -97,7 +95,7 @@ class VirtualKeyboard extends Component {
   }
 
   Row(numbersArray) {
-    let cells = numbersArray.map(val => this.Cell(val));
+    const cells = numbersArray.map(val => this.Cell(val));
     return <View style={[styles.row, this.props.rowStyle]}>{cells}</View>;
   }
 
@@ -132,13 +130,13 @@ class VirtualKeyboard extends Component {
       }
       this.setState({ text: curText });
       this.props.onPress(curText);
-    } /* if (props.pressMode == 'char')*/ else {
+    } /* if (props.pressMode == 'char') */ else {
       this.props.onPress(val);
     }
   }
 
   checkAmount(input) {
-    let reg_amount = /^(([1-9]\d*)|\d)(\.\d{1,2})?$/;
+    const reg_amount = /^(([1-9]\d*)|\d)(\.\d{1,2})?$/;
     return reg_amount.test(input);
   }
 }

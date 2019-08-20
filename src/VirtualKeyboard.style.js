@@ -1,4 +1,5 @@
 import { StyleSheet, Dimensions, Platform } from "react-native";
+
 const { height, width } = Dimensions.get("window");
 
 module.exports = StyleSheet.create({
@@ -19,8 +20,7 @@ module.exports = StyleSheet.create({
   backspace: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    padding: 10
+    justifyContent: "center"
   },
   cell: {
     flex: 1,
