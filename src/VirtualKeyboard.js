@@ -79,7 +79,7 @@ class VirtualKeyboard extends Component {
     return (
       <TouchableOpacity
         accessibilityLabel="backspace"
-        style={styles.backspace}
+        style={[styles.backspace, this.props.cellStyle]}
         onPress={() => {
           this.onPress("back");
         }}
